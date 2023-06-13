@@ -1,7 +1,10 @@
--- local autocmd = vim.api.nvim_create_autocmd
+local opt = vim.opt
 
--- Auto resize panes when resizing nvim window
--- autocmd("VimResized", {
---   pattern = "*",
---   command = "tabdo wincmd =",
--- })
+vim.cmd('command! -nargs=* Q wqa <args>')
+vim.cmd('command! -nargs=* T NvimTreeToggle <args>')
+vim.cmd('command! -nargs=* F Telescope find_files <args>')
+vim.cmd('command! -nargs=* B Telescope buffers <args>')
+vim.cmd('command! -nargs=* FF Telescope live_grep <args>')
+
+opt.guicursor = ""
+opt.encoding = "UTF-8"
