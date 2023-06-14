@@ -1,5 +1,4 @@
 local overrides = require("custom.configs.overrides")
-
 ---@type NvPluginSpec[]
 local plugins = {
 
@@ -60,28 +59,7 @@ local plugins = {
         end,
       },
     },
-    config = function()
-      local cmp = require('cmp')
-
-      cmp.setup({
-        mapping = {
-          ['<C-n>'] = cmp.mapping.select_next_item(),
-          ['<C-p>'] = cmp.mapping.select_prev_item(),
-          ['<C-y>'] = cmp.mapping.confirm({
-            behavior = cmp.ConfirmBehavior.Replace,
-            select = true,
-          }),
-        },
-        sources = {
-          { name = "nvim_lsp", group_index = 2 },
-          { name = "copilot",  group_index = 2 },
-          { name = "luasnip",  group_index = 2 },
-          { name = "buffer",   group_index = 2 },
-          { name = "nvim_lua", group_index = 2 },
-          { name = "path",     group_index = 2 },
-        },
-      })
-    end,
+    opts = overrides.cmp,
   },
 
   -- override plugin configs

@@ -5,8 +5,10 @@ M.general = {
   n = {
     [";"] = { ":", "enter command mode", opts = { nowait = true } },
   },
-}
 
--- more keybinds!
+  i = {
+    ["<Tab>"] = { "<Tab>", "insert a tab character" },
+  }
+}
 
 return M

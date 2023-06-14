@@ -1,4 +1,5 @@
 local M = {}
+local cmp = require "cmp"
 
 M.treesitter = {
   ensure_installed = {
@@ -64,9 +65,31 @@ M.copilot = {
   event = "InsertEnter"
 }
 
-M.ui = {
-  nvdash = {
-    load_on_startup = true,
+M.cmp = {
+  sources = {
+    { name = "nvim_lsp", group_index = 2 },
+    { name = "copilot",  group_index = 2 },
+    { name = "luasnip",  group_index = 2 },
+    { name = "buffer",   group_index = 2 },
+    { name = "nvim_lua", group_index = 2 },
+    { name = "path",     group_index = 2 },
+  },
+  mapping = {
+    ["<Tab>"] = cmp.mapping(function(fallback)
+      if vim.fn.pumvisible() == 0 then
+        vim.fn.feedkeys(vim.api.nvim_replace_termcodes("<Tab>", true, true, true), 'n')
+      else
+        fallback()
+      end
+    end, { "i", "s" }),
+
+    ["<S-Tab>"] = cmp.mapping(function(fallback)
+      if vim.fn.pumvisible() == 0 then
+        vim.fn.feedkeys(vim.api.nvim_replace_termcodes("<S-Tab>", true, true, true), 'n')
+      else
+        fallback()
+      end
+    end, { "i", "s" }),
   },
 }
 
