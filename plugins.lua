@@ -32,8 +32,22 @@ local plugins = {
 
   -- rust
   {
-    'simrat39/rust-tools.nvim',
+    "simrat39/rust-tools.nvim",
+    requires = {
+      "nvim-lua/popup.nvim",
+      "nvim-lua/plenary.nvim",
+      "nvim-telescope/telescope.nvim",
+      "mfussenegger/nvim-dap",
+    },
     ft = { 'rust' },
+    config = function()
+      require('rust-tools').setup({})
+    end,
+    lazy = false
+  },
+
+  {
+    'mfussenegger/nvim-dap'
   },
 
   {
