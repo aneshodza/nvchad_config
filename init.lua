@@ -8,3 +8,4 @@ vim.cmd('command! -nargs=* FF Telescope live_grep <args>')
 
 opt.guicursor = ""
 opt.encoding = "UTF-8"
+opt.colorcolumn = "120"
