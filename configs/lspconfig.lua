@@ -13,10 +13,6 @@ for _, lsp in ipairs(servers) do
   }
 end
 
--- 
--- lspconfig.pyright.setup { blabla}
---
-
 lspconfig.rust_analyzer.setup({
   on_attach = on_attach,
   capabilities = capabilities,
@@ -29,7 +25,7 @@ lspconfig.solargraph.setup{}
 lspconfig.steep.setup{}
 
 lspconfig.eslint.setup{
-  on_attach = function(client, bufnr)
+  on_attach = function(_, bufnr)
     local opts = { buffer = bufnr }
     vim.keymap.set('n', '<space><space>', function() vim.cmd('EslintFixAll') end, opts)
   end,

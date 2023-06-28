@@ -1,6 +1,7 @@
 local opt = vim.opt
 local api = vim.api
 local cmd = vim.cmd
+local g = vim.g
 
 cmd('command! -nargs=* Q wqa <args>')
 cmd('command! -nargs=* T NvimTreeToggle <args>')
@@ -24,3 +25,5 @@ api.nvim_set_keymap('n', '<silent> gD', '<cmd>:tab split<CR><cmd>lua vim.lsp.buf
 api.nvim_set_keymap('n', '<silent> gi', '<cmd>lua vim.lsp.buf.implementation()<CR>', {})
 cmd('command! -nargs=* Rn lua vim.lsp.buf.rename() <args>')
 cmd('command! -nargs=* Fm lua vim.lsp.buf.format() <args>')
+
+g.steep_path = "~/Steepfile"
