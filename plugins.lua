@@ -50,6 +50,10 @@ local plugins = {
   },
 
   {
+    'tpope/vim-rails'
+  },
+
+  {
     "hrsh7th/nvim-cmp",
     dependencies = {
       {

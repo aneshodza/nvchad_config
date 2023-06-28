@@ -26,6 +26,7 @@ lspconfig.rust_analyzer.setup({
 
 lspconfig.tsserver.setup {}
 lspconfig.solargraph.setup{}
+lspconfig.steep.setup{}
 
 lspconfig.eslint.setup{
   on_attach = function(client, bufnr)
