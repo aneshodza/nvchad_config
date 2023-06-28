@@ -26,7 +26,6 @@ local plugins = {
     "zbirenbaum/copilot.lua",
     event = "InsertEnter",
     opts = overrides.copilot,
-
   },
 
   -- rust
@@ -51,6 +50,10 @@ local plugins = {
 
   {
     'tpope/vim-rails'
+  },
+
+  {
+    'tpope/vim-surround'
   },
 
   {
