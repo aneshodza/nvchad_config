@@ -28,6 +28,15 @@ local plugins = {
     opts = overrides.copilot,
   },
 
+  {
+    "kylechui/nvim-surround",
+    version = "*",
+    event = "VeryLazy",
+    config = function()
+      require("nvim-surround").setup({})
+    end
+  },
+
   -- rust
   {
     "simrat39/rust-tools.nvim",
