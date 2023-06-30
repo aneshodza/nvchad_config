@@ -6,8 +6,10 @@ local g = vim.g
 cmd('command! -nargs=* Q wqa <args>')
 cmd('command! -nargs=* T NvimTreeToggle <args>')
 cmd('command! -nargs=* F Telescope find_files <args>')
-cmd('command! -nargs=* B Telescope buffers <args>')
+cmd('command! -nargs=* FA Telescope find_files hidden=true <args>') -- This finds ignored stuff too
 cmd('command! -nargs=* FF Telescope live_grep <args>')
+cmd('command! -nargs=* W Telescope buffers <args>')
+cmd('command! -nargs=* B Telescope git_branches <args>')
 
 -- This opens file tree if no file is specified
 -- vim.cmd([[
