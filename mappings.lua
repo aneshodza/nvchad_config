@@ -4,6 +4,7 @@ local M = {}
 M.general = {
   n = {
     [";"] = { ":", "enter command mode", opts = { nowait = true } },
+
     -- lsp-keybinds
     ["<leader>K"] = { "<cmd>lua vim.lsp.buf.hover()<CR>", "Show hover" },
     ["<leader>fm"] = { "<cmd>lua vim.lsp.buf.format()<CR>", "Format" },
@@ -11,7 +12,10 @@ M.general = {
     ["<leader>fi"] = { "<cmd>lua vim.lsp.buf.code_action()<CR>", "Autofix" },
     ["<leader>gi"] = { "<cmd>lua vim.lsp.buf.implementation()<CR>", "Go to implementation" },
     ["<leader>gd"] = { "<cmd>lua vim.lsp.buf.definition()<CR>", "Go to definition" },
-    ["<leader>lc"] = { ":VimtexCompile<CR>", "Compile latex document" }
+
+    -- vimtex stuff
+    ["<leader>lc"] = { ":VimtexCompile<CR>", "Compile latex document" },
+    ["<leader>lo"] = { ":VimtexView<CR>", "View latex output" },
   },
 
   i = {
