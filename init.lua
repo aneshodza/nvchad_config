@@ -25,4 +25,12 @@ cmd('command! -nargs=* Rn lua vim.lsp.buf.rename() <args>')
 cmd('command! -nargs=* Fm lua vim.lsp.buf.format() <args>')
 cmd('command! -nargs=* Fi lua vim.lsp.buf.code_action() <args>')
 
-g.steep_path = "~/Steepfile"
+-- g.steep_path = "~/Steepfile"
+
+-- Vimtex configuration
+cmd [[
+    " Vimtex options here. For example:
+    let g:vimtex_quickfix_mode=1
+    let g:vimtex_fold_enabled=0
+    let g:vimtex_compiler_progname = 'nvr'
+]]

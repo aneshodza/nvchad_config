@@ -103,6 +103,10 @@ local plugins = {
     end,
   },
 
+  {
+    'lervag/vimtex', ft = { 'tex' }
+  },
+
   -- To make a plugin not be loaded
   -- {
   --   "NvChad/nvim-colorizer.lua",
