@@ -24,8 +24,13 @@ opt.encoding = "UTF-8"
 cmd('command! -nargs=* Rn lua vim.lsp.buf.rename() <args>')
 cmd('command! -nargs=* Fm lua vim.lsp.buf.format() <args>')
 cmd('command! -nargs=* Fi lua vim.lsp.buf.code_action() <args>')
-
 -- g.steep_path = "~/Steepfile"
+
+-- markdown previewer
+g.mkdp_auto_start = 1
+g.mkdp_auto_close = 1
+g.mkdp_page_title = '「${name}」'
+g.mkdp_theme = 'light'
 
 -- Vimtex configuration
 cmd [[

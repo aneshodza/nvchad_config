@@ -16,6 +16,9 @@ M.general = {
     -- vimtex stuff
     ["<leader>lc"] = { ":VimtexCompile<CR>", "Compile latex document" },
     ["<leader>lo"] = { ":VimtexView<CR>", "View latex output" },
+
+    -- markdown
+    ["<leader>mp"] = { ":MarkdownPreview<CR>", "Preview markdown" },
   },
 
   i = {
