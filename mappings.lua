@@ -16,6 +16,7 @@ M.general = {
     -- vimtex stuff
     ["<leader>lc"] = { ":VimtexCompile<CR>", "Compile latex document" },
     ["<leader>lo"] = { ":VimtexView<CR>", "View latex output" },
+    ["<leader>ll"] = { ":copen<CR>", "Open latex compiler output"},
 
     -- markdown
     ["<leader>mp"] = { ":MarkdownPreview<CR>", "Preview markdown" },
