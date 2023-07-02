@@ -35,7 +35,7 @@ g.mkdp_theme = 'light'
 -- Vimtex configuration
 cmd [[
     " Vimtex options here. For example:
-    let g:vimtex_quickfix_mode=1
+    let g:vimtex_quickfix_mode=0
     let g:vimtex_fold_enabled=0
     let g:vimtex_compiler_progname = 'nvr'
 ]]
