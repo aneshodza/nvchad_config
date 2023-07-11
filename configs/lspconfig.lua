@@ -23,10 +23,3 @@ lspconfig.rust_analyzer.setup({
 lspconfig.tsserver.setup {}
 lspconfig.solargraph.setup{}
 -- lspconfig.steep.setup{}
-
-lspconfig.eslint.setup{
-  on_attach = function(_, bufnr)
-    local opts = { buffer = bufnr }
-    vim.keymap.set('n', '<space><space>', function() vim.cmd('EslintFixAll') end, opts)
-  end,
-}
