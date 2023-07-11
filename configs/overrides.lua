@@ -96,4 +96,8 @@ M.cmp = {
   },
 }
 
+M.lazy_nvimtree = {
+  dev = os.getenv("HOME") .. "/p"
+}
+
 return M
