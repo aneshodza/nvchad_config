@@ -28,12 +28,12 @@ local plugins = {
     build = function() vim.fn["mkdp#util#install"]() end,
   },
 
-  -- copilot
-  {
-    "zbirenbaum/copilot.lua",
-    event = "InsertEnter",
-    opts = overrides.copilot,
-  },
+  -- -- copilot
+  -- {
+  --   "zbirenbaum/copilot.lua",
+  --   event = "InsertEnter",
+  --   opts = overrides.copilot,
+  -- },
 
   {
     "kylechui/nvim-surround",
@@ -72,18 +72,18 @@ local plugins = {
     'tpope/vim-surround'
   },
 
-  {
-    "hrsh7th/nvim-cmp",
-    dependencies = {
-      {
-        "zbirenbaum/copilot-cmp",
-        config = function()
-          require("copilot_cmp").setup()
-        end,
-      },
-    },
-    opts = overrides.cmp,
-  },
+  -- {
+  --   "hrsh7th/nvim-cmp",
+  --   dependencies = {
+  --     {
+  --       "zbirenbaum/copilot-cmp",
+  --       config = function()
+  --         require("copilot_cmp").setup()
+  --       end,
+  --     },
+  --   },
+  --   opts = overrides.cmp,
+  -- },
 
   -- override plugin configs
   {
