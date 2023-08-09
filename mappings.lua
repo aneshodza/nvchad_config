@@ -5,8 +5,6 @@ M.general = {
   n = {
     [";"] = { ":", "enter command mode", opts = { nowait = true } },
 
-    ["<C-T>"] = { ":silent lcd %:p:h | !tmux new-window<CR>", noremap = true },
-
     -- lsp-keybinds
     ["<leader>K"] = { "<cmd>lua vim.lsp.buf.hover()<CR>", "Show hover" },
     ["<leader>fm"] = { "<cmd>lua vim.lsp.buf.format()<CR>", "Format" },
@@ -26,7 +24,6 @@ M.general = {
 
   i = {
     ["<Tab>"] = { "<Tab>", "insert a tab character" },
-    ["<C-T>"] = { ":silent lcd %:p:h | !tmux new-window<CR>", noremap = true },
   },
 }
 
