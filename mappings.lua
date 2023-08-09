@@ -20,6 +20,11 @@ M.general = {
 
     -- markdown
     ["<leader>mp"] = { ":MarkdownPreview<CR>", "Preview markdown" },
+
+    -- surround
+    ["<leader>sw"] = { ":lua local char = vim.fn.input('Enter surround symbol: '); vim.fn.feedkeys('ysiw' .. char)<CR>", "Surround word" },
+    ["<leader>sl"] = { ":lua local char = vim.fn.input('Enter surround symbol: '); vim.fn.feedkeys('yss' .. char)<CR>", "Surround line" },
+
   },
 
   i = {
