@@ -4,6 +4,10 @@ local M = {}
 M.general = {
   n = {
     [";"] = { ":", "enter command mode", opts = { nowait = true } },
+["<leader>rp"] = {
+      ":lua local search = vim.fn.input('Search for: '); local replace = vim.fn.input('Replace with: '); vim.fn.feedkeys(':%s#' .. search .. '#' .. replace .. '#gi')<CR>",
+      "Replace word"
+    },
 
     -- lsp-keybinds
     ["<leader>K"] = { "<cmd>lua vim.lsp.buf.hover()<CR>", "Show hover" },
@@ -22,9 +26,8 @@ M.general = {
     ["<leader>mp"] = { ":MarkdownPreview<CR>", "Preview markdown" },
 
     -- surround
-    ["<leader>sw"] = { ":lua local char = vim.fn.input('Enter surround symbol: '); vim.fn.feedkeys('ysiw' .. char)<CR>", "Surround word" },
-    ["<leader>sl"] = { ":lua local char = vim.fn.input('Enter surround symbol: '); vim.fn.feedkeys('yss' .. char)<CR>", "Surround line" },
-
+    ["<leader>sw"] = { ":lua local char = vim.fn.input('Enter surround symbol: '); vim.fn.feedkeys('ysiw' .. char .. '<CR>')<CR>", "Surround word" },
+    ["<leader>sl"] = { ":lua local char = vim.fn.input('Enter surround symbol: '); vim.fn.feedkeys('yss' .. char .. '<CR>')<CR>", "Surround line" },
   },
 
   i = {
