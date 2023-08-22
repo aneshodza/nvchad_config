@@ -1,5 +1,6 @@
 local on_attach = require("plugins.configs.lspconfig").on_attach
 local capabilities = require("plugins.configs.lspconfig").capabilities
+local os_check = require'custom.os_check'
 
 local lspconfig = require "lspconfig"
 
@@ -21,5 +22,14 @@ lspconfig.rust_analyzer.setup({
 })
 
 lspconfig.tsserver.setup {}
-lspconfig.solargraph.setup{}
+
+if os_check.is_fedora() then
+  lspconfig.solargraph.setup{
+    cmd = {
+      '/home/aneshodza/solargraph_lsp_wrapper.sh'
+    }
+  }
+else
+  lspconfig.solargraph.setup{}
+end
 -- lspconfig.steep.setup{}

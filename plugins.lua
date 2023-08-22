@@ -1,3 +1,4 @@
+local os_check = require'custom.os_check'
 local overrides = require("custom.configs.overrides")
 ---@type NvPluginSpec[]
 local plugins = {
@@ -27,13 +28,6 @@ local plugins = {
     ft = { "markdown" },
     build = function() vim.fn["mkdp#util#install"]() end,
   },
-
-  -- -- copilot
-  -- {
-  --   "zbirenbaum/copilot.lua",
-  --   event = "InsertEnter",
-  --   opts = overrides.copilot,
-  -- },
 
   {
     "kylechui/nvim-surround",
@@ -128,5 +122,13 @@ local plugins = {
   --   lazy = false,
   -- }
 }
+
+if not os_check.is_fedora() then
+  table.insert(plugins, {
+    "zbirenbaum/copilot.lua",
+    event = "InsertEnter",
+    opts = overrides.copilot,
+  })
+end
 
 return plugins
