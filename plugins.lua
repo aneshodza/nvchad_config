@@ -108,6 +108,16 @@ local plugins = {
     'lervag/vimtex', ft = { 'tex' }
   },
 
+  {
+    'akinsho/flutter-tools.nvim',
+    lazy = false,
+    dependencies = {
+      'nvim-lua/plenary.nvim',
+      'stevearc/dressing.nvim', -- optional for vim.ui.select
+    },
+    config = true,
+  },
+
   -- To make a plugin not be loaded
   -- {
   --   "NvChad/nvim-colorizer.lua",
