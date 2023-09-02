@@ -66,19 +66,6 @@ local plugins = {
     'tpope/vim-surround'
   },
 
-  -- {
-  --   "hrsh7th/nvim-cmp",
-  --   dependencies = {
-  --     {
-  --       "zbirenbaum/copilot-cmp",
-  --       config = function()
-  --         require("copilot_cmp").setup()
-  --       end,
-  --     },
-  --   },
-  --   opts = overrides.cmp,
-  -- },
-
   -- override plugin configs
   {
     "williamboman/mason.nvim",
@@ -138,6 +125,19 @@ if not os_check.is_fedora() then
     "zbirenbaum/copilot.lua",
     event = "InsertEnter",
     opts = overrides.copilot,
+  })
+
+  table.insert(plugins, {
+    "hrsh7th/nvim-cmp",
+    dependencies = {
+      {
+        "zbirenbaum/copilot-cmp",
+        config = function()
+          require("copilot_cmp").setup()
+        end,
+      },
+    },
+    opts = overrides.cmp,
   })
 end
 
