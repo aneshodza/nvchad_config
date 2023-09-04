@@ -28,11 +28,20 @@ M.general = {
     -- surround
     ["<leader>sw"] = { ":lua local char = vim.fn.input('Enter surround symbol: '); vim.fn.feedkeys('ysiw' .. char .. '<CR>')<CR>", "Surround word" },
     ["<leader>sl"] = { ":lua local char = vim.fn.input('Enter surround symbol: '); vim.fn.feedkeys('yss' .. char .. '<CR>')<CR>", "Surround line" },
+
+    -- spectre
+    ['<leader>St'] = { "<cmd>lua require(\"spectre\").toggle()<CR>", "Toggle Spectre" },
+    ['<leader>Sw'] = { "<cmd>lua require(\"spectre\").open_visual({select_word=true})<CR>", "Search current word" },
+    ['<leader>Sf'] = { "<cmd>lua require(\"spectre\").open_file_search({select_word=true})<CR>", "Search on current file" }
   },
 
   i = {
     ["<Tab>"] = { "<Tab>", "insert a tab character" },
   },
+  
+  v = {
+    ['<leader>Sw'] = { "<esc><cmd>lua require(\"spectre\").open_visual()<CR>", "Search current word" },
+  }
 }
 
 return M
