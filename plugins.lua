@@ -1,5 +1,5 @@
-local os_check = require'custom.os_check'
-local overrides = require("custom.configs.overrides")
+local os_check = require "custom.os_check"
+local overrides = require "custom.configs.overrides"
 ---@type NvPluginSpec[]
 local plugins = {
 
@@ -8,7 +8,6 @@ local plugins = {
   {
     "neovim/nvim-lspconfig",
     dependencies = {
-      -- format & linting
       {
         "jose-elias-alvarez/null-ls.nvim",
         config = function()
@@ -26,7 +25,9 @@ local plugins = {
     "iamcco/markdown-preview.nvim",
     cmd = { "MarkdownPreviewToggle", "MarkdownPreview", "MarkdownPreviewStop" },
     ft = { "markdown" },
-    build = function() vim.fn["mkdp#util#install"]() end,
+    build = function()
+      vim.fn["mkdp#util#install"]()
+    end,
   },
 
   {
@@ -34,8 +35,8 @@ local plugins = {
     version = "*",
     event = "VeryLazy",
     config = function()
-      require("nvim-surround").setup({})
-    end
+      require("nvim-surround").setup {}
+    end,
   },
 
   -- rust
@@ -47,29 +48,29 @@ local plugins = {
       "nvim-telescope/telescope.nvim",
       "mfussenegger/nvim-dap",
     },
-    ft = { 'rust' },
+    ft = { "rust" },
     config = function()
-      require('rust-tools').setup({})
+      require("rust-tools").setup {}
     end,
-    lazy = false
+    lazy = false,
   },
 
   {
-    'mfussenegger/nvim-dap'
+    "mfussenegger/nvim-dap",
   },
 
   {
-    'tpope/vim-rails'
+    "tpope/vim-rails",
   },
 
   {
-    'tpope/vim-surround'
+    "tpope/vim-surround",
   },
 
   -- override plugin configs
   {
     "williamboman/mason.nvim",
-    opts = overrides.mason
+    opts = overrides.mason,
   },
 
   {
@@ -92,35 +93,28 @@ local plugins = {
   },
 
   {
-    'lervag/vimtex', ft = { 'tex' }
+    "lervag/vimtex",
+    ft = { "tex" },
   },
 
   {
-    'akinsho/flutter-tools.nvim',
+    "akinsho/flutter-tools.nvim",
     lazy = false,
     dependencies = {
-      'nvim-lua/plenary.nvim',
-      'stevearc/dressing.nvim', -- optional for vim.ui.select
+      "nvim-lua/plenary.nvim",
+      "stevearc/dressing.nvim", -- optional for vim.ui.select
     },
     config = true,
   },
 
   {
-    'nvim-pack/nvim-spectre',
+    "nvim-pack/nvim-spectre",
     dependencies = {
-      'nvim-lua/plenary.nvim'
-    }
+      "nvim-lua/plenary.nvim",
+    },
   },
-}
 
-if not os_check.is_fedora() then
-  table.insert(plugins, {
-    "zbirenbaum/copilot.lua",
-    event = "InsertEnter",
-    opts = overrides.copilot,
-  })
-
-  table.insert(plugins, {
+  {
     "hrsh7th/nvim-cmp",
     dependencies = {
       {
@@ -131,6 +125,14 @@ if not os_check.is_fedora() then
       },
     },
     opts = overrides.cmp,
+  },
+}
+
+if not os_check.is_fedora() then
+  table.insert(plugins, {
+    "zbirenbaum/copilot.lua",
+    event = "InsertEnter",
+    opts = overrides.copilot,
   })
 end
 
