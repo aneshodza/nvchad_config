@@ -66,6 +66,7 @@ M.copilot = {
   event = "InsertEnter",
 }
 
+local cmp_active = false
 M.cmp = {
   sources = {
     { name = "nvim_lsp", group_index = 2 },
@@ -94,7 +95,7 @@ M.cmp = {
     ["<Down>"] = cmp.mapping.select_next_item { behavior = cmp.SelectBehavior.Select },
     ["<Up>"] = cmp.mapping.select_prev_item { behavior = cmp.SelectBehavior.Select },
     ["<CR>"] = cmp.mapping(function(fallback)
-      if vim.fn.pumvisible() == 0 then
+      if vim.fn.pumvisible() == 0 and cmp_active then
         vim.fn.feedkeys(vim.api.nvim_replace_termcodes("<CR>", true, true, true), "n")
       else
         fallback()
@@ -104,6 +105,18 @@ M.cmp = {
       behavior = cmp.ConfirmBehavior.Insert,
       select = true,
     },
+  },
+
+  event = {
+    on_confirm_done = function()
+      cmp_active = false
+    end,
+    on_menu_open = function()
+      cmp_active = true
+    end,
+    on_menu_close = function()
+      cmp_active = false
+    end,
   },
 }
 
