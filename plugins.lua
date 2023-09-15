@@ -106,6 +106,7 @@ local plugins = {
     },
     config = true,
   },
+<<<<<<< Updated upstream
 
   {
     "nvim-pack/nvim-spectre",
@@ -115,6 +116,18 @@ local plugins = {
   },
 
   {
+=======
+}
+
+if not os_check.is_fedora() then
+  table.insert(plugins, {
+    "zbirenbaum/copilot.lua",
+    event = "InsertEnter",
+    opts = overrides.copilot,
+  })
+
+  table.insert(plugins, {
+>>>>>>> Stashed changes
     "hrsh7th/nvim-cmp",
     dependencies = {
       {
