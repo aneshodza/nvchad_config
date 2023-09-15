@@ -105,6 +105,10 @@ M.cmp = {
       behavior = cmp.ConfirmBehavior.Insert,
       select = true,
     },
+    ["<C-Enter>"] = cmp.mapping.confirm {
+      behavior = cmp.ConfirmBehavior.Insert,
+      select = true,
+    },
   },
 
   event = {
