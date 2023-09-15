@@ -106,7 +106,6 @@ local plugins = {
     },
     config = true,
   },
-<<<<<<< Updated upstream
 
   {
     "nvim-pack/nvim-spectre",
@@ -115,8 +114,6 @@ local plugins = {
     },
   },
 
-  {
-=======
 }
 
 if not os_check.is_fedora() then
@@ -127,7 +124,6 @@ if not os_check.is_fedora() then
   })
 
   table.insert(plugins, {
->>>>>>> Stashed changes
     "hrsh7th/nvim-cmp",
     dependencies = {
       {
@@ -138,8 +134,8 @@ if not os_check.is_fedora() then
       },
     },
     opts = overrides.cmp,
-  },
-}
+  })
+end
 
 if not os_check.is_fedora() then
   table.insert(plugins, {
