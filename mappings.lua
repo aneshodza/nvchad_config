@@ -32,7 +32,7 @@ M.general = {
     -- spectre
     ['<leader>St'] = { "<cmd>lua require(\"spectre\").toggle()<CR>", "Toggle Spectre" },
     ['<leader>Sw'] = { "<cmd>lua require(\"spectre\").open_visual({select_word=true})<CR>", "Search current word" },
-    ['<leader>Sf'] = { "<cmd>lua require(\"spectre\").open_file_search({select_word=true})<CR>", "Search on current file" }
+    ['<leader>Sf'] = { "<cmd>lua require(\"spectre\").open_file_search({select_word=true})<CR>", "Search on current file" },
     -- dap
     ["<leader>dt"] = { ":lua require'dap'.toggle_breakpoint()<CR>", 'Toggle breakpoint'}
   },
