@@ -33,3 +33,4 @@ else
   lspconfig.solargraph.setup{}
 end
 -- lspconfig.steep.setup{}
+require('custom.configs.jdtls')
