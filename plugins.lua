@@ -114,10 +114,10 @@ local plugins = {
     },
   },
 
-  {
-    "mfussenegger/nvim-jdtls",
-    ft = { "java" },
-  },
+  -- {
+  --   "mfussenegger/nvim-jdtls",
+  --   ft = { "java" },
+  -- },
 }
 
 if not os_check.is_fedora() then
