@@ -10,7 +10,7 @@ M.general = {
     },
 
     -- lsp-keybinds
-    ["<leader>K"] = { "<cmd>lua vim.lsp.buf.hover()<CR>", "Show hover" },
+    ["K"] = { "<cmd>lua vim.lsp.buf.hover()<CR>", "Show hover" },
     ["<leader>fm"] = { "<cmd>lua vim.lsp.buf.format()<CR>", "Format" },
     ["<leader>rn"] = { "<cmd>lua vim.lsp.buf.rename()<CR>", "Rename" },
     ["<leader>fi"] = { "<cmd>lua vim.lsp.buf.code_action()<CR>", "Autofix" },
@@ -35,6 +35,8 @@ M.general = {
     ['<leader>Sf'] = { "<cmd>lua require(\"spectre\").open_file_search({select_word=true})<CR>", "Search on current file" },
     -- dap
     ["<leader>dt"] = { ":lua require'dap'.toggle_breakpoint()<CR>", 'Toggle breakpoint'}
+
+
   },
 
   i = {
