@@ -27,10 +27,10 @@ cmd('command! -nargs=* Fi lua vim.lsp.buf.code_action() <args>')
 -- g.steep_path = "~/Steepfile"
 
 -- markdown previewer
-g.mkdp_auto_start = 1
+g.mkdp_auto_start = 0
 g.mkdp_auto_close = 0
 g.mkdp_page_title = '${name}'
-g.mkdp_refresh_slow = 1
+g.mkdp_refresh_slow = 0
 g.mkdp_theme = 'light'
 
 -- Vimtex configuration
