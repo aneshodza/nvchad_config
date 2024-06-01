@@ -23,6 +23,19 @@ lspconfig.rust_analyzer.setup({
 
 lspconfig.tsserver.setup {}
 
+lspconfig.pyright.setup {
+  settings = {
+    python = {
+      analysis = {
+        typeCheckingMode = "basic", -- Options: "off", "basic", "strict"
+        autoSearchPaths = true,
+        diagnosticMode = "workspace", -- Options: "workspace", "openFilesOnly"
+        useLibraryCodeForTypes = true
+      }
+    }
+  }
+}
+
 if os_check.is_fedora() then
   lspconfig.solargraph.setup{
     cmd = {
@@ -33,3 +46,4 @@ else
   lspconfig.solargraph.setup{}
 end
 -- lspconfig.steep.setup{}
+-- require('custom.configs.jdtls')

@@ -114,7 +114,20 @@ local plugins = {
     },
   },
 
-  {
+  -- {
+  --   "mfussenegger/nvim-jdtls",
+  --   ft = { "java" },
+  -- },
+}
+
+if not os_check.is_fedora() then
+  table.insert(plugins, {
+    "zbirenbaum/copilot.lua",
+    event = "InsertEnter",
+    opts = overrides.copilot,
+  })
+
+  table.insert(plugins, {
     "hrsh7th/nvim-cmp",
     dependencies = {
       {
@@ -125,8 +138,8 @@ local plugins = {
       },
     },
     opts = overrides.cmp,
-  },
-}
+  })
+end
 
 if not os_check.is_fedora() then
   table.insert(plugins, {
