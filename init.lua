@@ -40,3 +40,11 @@ cmd [[
     let g:vimtex_fold_enabled=0
     let g:vimtex_compiler_progname = 'nvr'
 ]]
+
+-- Set language to English
+vim.o.langmenu = 'en_US.UTF-8'
+vim.cmd('language messages en_US.UTF-8')
+
+-- Set environment variables
+vim.env.LANG = 'en_US.UTF-8'
+vim.env.LC_ALL = 'en_US.UTF-8'
