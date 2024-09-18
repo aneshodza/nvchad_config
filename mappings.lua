@@ -9,6 +9,15 @@ M.general = {
       "Replace word"
     },
 
+    -- resize
+    ['<leader>rhm'] = { "<cmd>horizontal resize +10<CR>", "Resize horizontal +10" },
+    ['<leader>rhl'] = { "<cmd>horizontal resize -10<CR>", "Resize horizontal -10" },
+    ['<leader>rhs'] = { "<cmd>horizontal resize 15<CR>", "Resize horizontal to be small (15)" },
+
+    ['<leader>rvm'] = { "<cmd>vertical resize +10<CR>", "Resize vertical +10" },
+    ['<leader>rvl'] = { "<cmd>vertical resize -10<CR>", "Resize vertical -10" },
+    ['<leader>rvs'] = { "<cmd>vertical resize 15<CR>", "Resize vertical to be small (15)" },
+
     -- lsp-keybinds
     ["K"] = { "<cmd>lua vim.lsp.buf.hover()<CR>", "Show hover" },
     ["<leader>fm"] = { "<cmd>lua vim.lsp.buf.format()<CR>", "Format" },
