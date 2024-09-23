@@ -9,6 +9,21 @@ M.general = {
       "Replace word"
     },
 
+    -- split
+    ["<leader>sh"] = { "<cmd>split<CR>", "Split horizontal" },
+    ["<leader>sv"] = { "<cmd>vsplit<CR>", "Split vertical" },
+
+    -- resize
+    ['<leader>rhm'] = { "<cmd>horizontal resize +10<CR>", "Resize horizontal +10" },
+    ['<leader>rhl'] = { "<cmd>horizontal resize -10<CR>", "Resize horizontal -10" },
+    ['<leader>rhs'] = { "<cmd>horizontal resize 15<CR>", "Resize horizontal to be small (15)" },
+    ['<leader>rhc'] = { "<cmd>horizontal resize ", "Resize horizontal custom" },
+
+    ['<leader>rvm'] = { "<cmd>vertical resize +10<CR>", "Resize vertical +10" },
+    ['<leader>rvl'] = { "<cmd>vertical resize -10<CR>", "Resize vertical -10" },
+    ['<leader>rvs'] = { "<cmd>vertical resize 15<CR>", "Resize vertical to be small (15)" },
+    ['<leader>rvc'] = { "<cmd>vertical resize ", "Resize vertical custom" },
+
     -- lsp-keybinds
     ["K"] = { "<cmd>lua vim.lsp.buf.hover()<CR>", "Show hover" },
     ["<leader>fm"] = { "<cmd>lua vim.lsp.buf.format()<CR>", "Format" },
