@@ -21,8 +21,6 @@ lspconfig.rust_analyzer.setup({
   root_dir = lspconfig.util.root_pattern("Cargo.toml")
 })
 
-lspconfig.tsserver.setup {}
-
 lspconfig.pyright.setup {
   settings = {
     python = {
