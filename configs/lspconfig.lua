@@ -5,7 +5,7 @@ local os_check = require'custom.os_check'
 local lspconfig = require "lspconfig"
 
 -- if you just want default config for the servers then put them in a table
-local servers = { "html", "cssls", "clangd" }
+local servers = { "html", "cssls" }
 
 for _, lsp in ipairs(servers) do
   lspconfig[lsp].setup {
@@ -13,6 +13,15 @@ for _, lsp in ipairs(servers) do
     capabilities = capabilities,
   }
 end
+local cmp_nvim_lsp = require "cmp_nvim_lsp"
+lspconfig.clangd.setup {
+  on_attach = on_attach,
+  capabilities = cmp_nvim_lsp.default_capabilities(),
+  cmd = {
+    "clangd",
+    "--offset-encoding=utf-16",
+  },
+}
 
 lspconfig.rust_analyzer.setup({
   on_attach = on_attach,
