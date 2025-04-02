@@ -2,9 +2,6 @@ local os_check = require "custom.os_check"
 local overrides = require "custom.configs.overrides"
 ---@type NvPluginSpec[]
 local plugins = {
-
-  -- Override plugin definition options
-
   {
     "neovim/nvim-lspconfig",
     dependencies = {
@@ -39,7 +36,6 @@ local plugins = {
     end,
   },
 
-  -- rust
   {
     "simrat39/rust-tools.nvim",
     requires = {
@@ -67,7 +63,6 @@ local plugins = {
     "tpope/vim-surround",
   },
 
-  -- override plugin configs
   {
     "williamboman/mason.nvim",
     opts = overrides.mason,
@@ -83,7 +78,6 @@ local plugins = {
     opts = overrides.nvimtree,
   },
 
-  -- Install a plugin
   {
     "max397574/better-escape.nvim",
     event = "InsertEnter",
@@ -114,6 +108,12 @@ local plugins = {
     },
   },
 
+  {
+    "tpope/vim-eunuch",
+    lazy = false,
+  },
+
+  -- TODO: Try to get java to work in nvim
   -- {
   --   "mfussenegger/nvim-jdtls",
   --   ft = { "java" },
@@ -138,14 +138,6 @@ if not os_check.is_fedora() then
       },
     },
     opts = overrides.cmp,
-  })
-end
-
-if not os_check.is_fedora() then
-  table.insert(plugins, {
-    "zbirenbaum/copilot.lua",
-    event = "InsertEnter",
-    opts = overrides.copilot,
   })
 end
 
